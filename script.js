@@ -181,3 +181,36 @@ function seCramerLaRetine(color) {
 //J'aurais pu faire en sorte de quitter le thème et retourner à la couleur d'origine en ajoutant un boolean en fonction du true ou
 //false on verrait si le bouton est activé ou pas et donc desactivé le tème mais j'ai pas eu le temps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Exercice  13:
+// Fonction pour récupérer les données d'un utilisateur aléatoire
+async function fetchRandomUser() {
+  const response = await fetch("https://randomuser.me/api/");
+  const data = await response.json();
+  const user = data.results[0];
+
+  // Sélectionner la carte utilisateur
+  const userCard = document.getElementById("userCard");
+
+  // Mettre à jour les éléments de la carte avec les données de l'utilisateur
+  userCard.innerHTML = `
+    <img src="${user.picture.large}" class="card-img-top" alt="Photo de profil">
+    <div class="card-body">
+      <h5 class="card-title">${user.name.title} ${user.name.first} ${user.name.last}</h5>
+      <p class="card-text">
+        ${user.email}<br>
+        ${user.location.street.number} ${user.location.street.name}, ${user.location.city}, ${user.location.country}<br>
+        ${user.phone}
+      </p>
+    </div>
+  `;
+}
+
+// Appeler la fonction au chargement de la page
+fetchRandomUser();
+
+// Sélectionner le bouton et ajouter un écouteur d'événement
+const refreshButton = document.createElement("button");
+refreshButton.textContent = "Nouvel utilisateur";
+document.getElementById("userCard").appendChild(refreshButton);
+refreshButton.addEventListener("click", fetchRandomUser);
