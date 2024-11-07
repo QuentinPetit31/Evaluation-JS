@@ -24,5 +24,25 @@
     <button onclick="seCramerLaRetine('chartreuse');">
       Se cramer la rétine
     </button>
+
+    <div id="app" class="container-fluid min-vh-100">
+      <h1>TP-4 : Api RandomUser DOM</h1>
+      <div
+        id="userCard"
+        class="card p-3 w-40 mx-auto text-center bg-primary-subtle"
+        style="width: 18rem"
+      >
+        <img id="userImage" src="" class="card-img-top" alt="User Image" />
+        <div class="card-body">
+          <h5 id="userName" class="card-title">Nom de l'utilisateur</h5>
+          <p id="userEmail" class="card-text">Email de l'utilisateur</p>
+          <p id="userAddress" class="card-text">Adresse de l'utilisateur</p>
+          <p id="userPhone" class="card-text">Téléphone de l'utilisateur</p>
+          <button id="reloadButton" class="btn btn-primary">
+            Charger un nouvel utilisateur
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
