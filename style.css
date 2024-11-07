@@ -1,0 +1,10 @@
+body {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body.chartreuse {
+  background-color: #2f2f2f;
+  color: #b4d300;
+}
